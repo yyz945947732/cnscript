@@ -5,6 +5,9 @@
   "bin": {
     "cnscript": "bin/cnscript.js"
   },
+  "files": [
+    "bin"
+  ],
   "scripts": {
     "start": "node ./bin/cnscript.js ./example/javascript.js"
   },
@@ -13,6 +16,7 @@
     "url": "https://github.com/yyz945947732/cnscript.git"
   },
   "keywords": [
+    "language",
     "javascript",
     "chinese",
     "subset",
