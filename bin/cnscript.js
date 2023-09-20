@@ -7,53 +7,30 @@
  * @see https://github.com/iamfrontender/your-script
  */
 
-// Natives ----------------------------------------------
 const fs = require("fs/promises");
 const path = require("path");
-
-// Modules ----------------------------------------------
 const translator = require("your-script");
 
-// Allocations ------------------------------------------
 const files = process.argv.slice(2);
 
 const mainDir = path.dirname(module.filename);
+const lexemsFolder = path.join(mainDir, "lexems");
 
 const customScript = new translator({
-  lexemsFolder: path.join(mainDir, "lexems"),
+  lexemsFolder,
 });
 
-/**
- * Abstract logger wrapper over global console.
- *
- * @param {String} logger Logger to wrap
- * @param {String[]} messages array of strings, or arguments array of strings
- * @private
- */
-function _logger(logger, messages) {
-  messages = ["[CNSCRIPT] -"].concat(Array.prototype.slice.call(messages));
-  console[logger].apply(console, messages);
-}
-
-/**
- * Plain output logger
- */
-function log() {
-  _logger("log", arguments);
-}
-
-/**
- * Error logger
- */
-function error() {
-  _logger("error", arguments);
-}
+const JS_TYPE = "javascript";
+const JS_EXT = "js";
+const CUSTOM_TYPE = "cnscript";
+const CUSTOM_EXT = "cns";
 
 /**
  * Get the module config before source parsing.
  * Simply choses a correct extension based on input file.
  *
  * @param {String} inputFile path to input file.
+ * @returns {{ inputExt: string, outputExt: string, inputType: string, outputType: string }} options
  */
 function getOptions(inputFile) {
   let inputExt;
@@ -63,14 +40,14 @@ function getOptions(inputFile) {
 
   inputExt = path.extname(inputFile).substring(1);
 
-  if (inputExt === "js") {
-    inputType = "javascript";
-    outputType = "cnscript";
-    outputExt = "cns";
-  } else if (inputExt === "cns") {
-    inputType = "cnscript";
-    outputType = "javascript";
-    outputExt = "js";
+  if (inputExt === JS_EXT) {
+    inputType = JS_TYPE;
+    outputType = CUSTOM_TYPE;
+    outputExt = CUSTOM_EXT;
+  } else if (inputExt === CUSTOM_EXT) {
+    inputType = CUSTOM_TYPE;
+    outputType = JS_TYPE;
+    outputExt = JS_EXT;
   }
 
   return {
@@ -99,12 +76,12 @@ async function parse(inputFile) {
           to: outputType,
         })
       );
-      log(inputFile, "done");
+      console.log(`${inputFile} done`);
     } else {
-      error("Seems", inputFile, "is not a file, skipping.");
+      console.warn(`${inputFile} is not a file`);
     }
   } catch (err) {
-    error(err);
+    console.err(err);
   }
 }
 
@@ -113,6 +90,6 @@ files.forEach(function (file) {
   try {
     parse(file);
   } catch (e) {
-    error(e);
+    console.err(e);
   }
 });
