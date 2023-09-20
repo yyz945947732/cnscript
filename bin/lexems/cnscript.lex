@@ -22,7 +22,7 @@ WITH 和
 IN 在
 OF 从
 AS 作为
-NEW 创建
+NEW 实例化
 THROW 抛出
 ENUM 枚举
 EXPORT 导出

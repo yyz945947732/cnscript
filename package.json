@@ -9,7 +9,8 @@
     "bin"
   ],
   "scripts": {
-    "start": "node ./bin/cnscript.js ./example/javascript.js"
+    "js": "node ./bin/cnscript.js ./example/javascript.js",
+    "cns": "node ./bin/cnscript.js ./example/cnscript.cns"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,6 @@
   "homepage": "https://github.com/yyz945947732/cnscript",
   "preferGlobal": true,
   "dependencies": {
-    "your-script": "^0.0.5"
+    "your-script": "*"
   }
 }
