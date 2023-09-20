@@ -50,7 +50,7 @@ After launching `cnscript programm.js` in directory with this file, parser will 
 
 函数 createFunction1() {
   常量 x = 20;
-  返回 创建 函数("return x;");
+  返回 实例化 Function("return x;");
 }
 
 函数 createFunction2() {
