@@ -1,5 +1,5 @@
 {
-  "name": "rscript",
+  "name": "cnscript",
   "version": "1.0.0",
   "description": "Chinese JavaScript Subset",
   "bin": {
