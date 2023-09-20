@@ -1,0 +1,19 @@
+变量 x = 10;
+
+函数 createFunction1() {
+  常量 x = 20;
+  返回 实例化 Function("return x;");
+}
+
+函数 createFunction2() {
+  常量 x = 20;
+  函数 f() {
+    返回 x;
+  }
+  返回 f;
+}
+
+常量 f1 = createFunction1();
+console.log(f1());
+常量 f2 = createFunction2();
+console.log(f2());

@@ -9,6 +9,7 @@
     "bin"
   ],
   "scripts": {
+    "test": "ava",
     "js": "node ./bin/cnscript.js ./example/javascript.js",
     "cns": "node ./bin/cnscript.js ./example/cnscript.cns"
   },
@@ -33,5 +34,8 @@
   "preferGlobal": true,
   "dependencies": {
     "your-script": "*"
+  },
+  "devDependencies": {
+    "ava": "^5.3.1"
   }
 }
