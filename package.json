@@ -6,9 +6,7 @@
     "cnscript": "bin/cnscript.js"
   },
   "scripts": {
-    "start": "node ./bin/cnscript.js ./example/javascript.js",
-    "cn": "node ./bin/cnscript.js ./example/cnscript.cns",
-    "red": "redscript ./example/red.js"
+    "start": "node ./bin/cnscript.js ./example/javascript.js"
   },
   "repository": {
     "type": "git",
