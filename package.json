@@ -1,6 +1,6 @@
 {
   "name": "cnscript",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Chinese JavaScript Subset",
   "bin": {
     "cnscript": "bin/cnscript.js"
