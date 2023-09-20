@@ -64,11 +64,6 @@ function getOptions(inputFile) {
 async function parse(inputFile) {
   const { inputExt, outputExt, inputType, outputType } = getOptions(inputFile);
   const filename = inputFile.replace(`.${inputExt}`, `.${outputExt}`);
-  customScript.applyConfig({
-    lexemsFolder,
-    from: inputType,
-    to: outputType,
-  });
   try {
     const stat = await fs.stat(inputFile);
     if (stat.isFile()) {
