@@ -92,13 +92,13 @@ async function parse(inputFile) {
     const stat = await fs.stat(inputFile);
     if (stat.isFile()) {
       const data = await fs.readFile(inputFile, "utf-8");
-        await fs.writeFile(
-          filename,
-          customScript.parse(data, {
-            from: inputType,
-            to: outputType,
-          })
-        );
+      await fs.writeFile(
+        filename,
+        customScript.parse(data, {
+          from: inputType,
+          to: outputType,
+        })
+      );
       log(inputFile, "done");
     } else {
       error("Seems", inputFile, "is not a file, skipping.");
