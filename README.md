@@ -1,9 +1,9 @@
-# CnScript
+# CNScript
 
-CnScript is language (actually don't) that transpiles to JavaScript.
+CNScript is language (actually don't) that transpiles to JavaScript.
 This code is created with the help of [your-script](https://github.com/iamfrontender/your-script) module.
 
-The source files in CnScript have `.cns` extension.
+The source files in CNScript have `.cns` extension.
 
 ## Disclaimer
 
@@ -12,7 +12,7 @@ This module is created just for enormous incredible fun, nothing more. I can't e
 ## Usage
 
 This module is distributed via npm, it requires global installation, run `npm i -g cnscript` just where you want this code.
-CnScript provides minimal console tool to translate source files to JavaScript and vice versa.
+CNScript provides minimal console tool to translate source files to JavaScript and vice versa.
 After installed globally it availble in your wd as `cnscript`
 
 Run `cnscript yourFile.js` or `cnscript yourFile.cns` to translate it to opposite subset.
@@ -43,7 +43,7 @@ const f2 = createFunction2();
 console.log(f2());
 ```
 
-After launching `cnscript programm.js` in directory with this file, parser will create transpiled source file, `programm.cns`, translated in CnScript and look as following:
+After launching `cnscript programm.js` in directory with this file, parser will create transpiled source file, `programm.cns`, translated in CNScript and look as following:
 
 ```javascript
 变量 x = 10;
@@ -69,7 +69,7 @@ console.log(f2());
 
 ## What it is and what isn't
 
-Since CnScript is based on your-scipt, this subset is limited by modifying the language keywords. So, any global object properties, like `document.body` or `HTMLElement.prototype.nextElementSibling` are untouched, though it's definetely possible :)
+Since CNScript is based on your-scipt, this subset is limited by modifying the language keywords. So, any global object properties, like `document.body` or `HTMLElement.prototype.nextElementSibling` are untouched, though it's definetely possible :)
 
 ## Under the hood
 
